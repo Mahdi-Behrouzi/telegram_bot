@@ -1,26 +1,13 @@
 import telebot
-from telebot import apihelper
 
-# ✅ توکن رباتت اینجاست
-TOKEN = '5090610413:AAE3lZKpsOp6ps6uFsS_kQ0bCi0wdv4B-Qk'
-
-# ✅ اینم پراکسی HTTP که قراره استفاده بشه
-proxy = 'http://104.248.63.17:30588'  # ← اینو می‌تونی بعداً تغییر بدی
-
-# ✅ تنظیم پراکسی توی کتابخونه
-apihelper.proxy = {
-    'http': proxy,
-    'https': proxy
-}
-
-# ✅ ساخت بات
+# توکن ربات که از BotFather گرفتی
+TOKEN = '2137736951:AAFd_O8450uizaaf2wJDvv9qf0ZSic1mGec'
 bot = telebot.TeleBot(TOKEN)
 
-# ✅ جواب به دستور /start
+# هندلر برای فرمان /start
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "✅ ربات به درستی وصل شد!")
+    bot.reply_to(message, "سلام! خوش اومدی به ربات تولیدی بهروزی 🎉")
 
-# ✅ اجرا
-bot.polling()
-
+# فعال نگه داشتن ربات
+bot.infinity_polling()
